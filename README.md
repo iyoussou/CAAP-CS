@@ -1,4 +1,4 @@
 # CAAP-CS
 Ismail Youssou / iyoussou
 
-The purpose of this repository is lab submissions for the CAAP course.
+The purpose of this repository is to store lab submissions for the CAAP course.
