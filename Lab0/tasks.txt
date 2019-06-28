@@ -1,0 +1,9 @@
+Task 6
+
+----
+
+This message (as well as the commit message) was edited using information I acquired from the following website:
+
+https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History
+
+git commit --amend is a powerful command
