@@ -7,3 +7,26 @@ This message (as well as the commit message) was edited using information I acqu
 https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History
 
 git commit --amend is a powerful command
+
+c7e86ad4f1061b0cad9f64a6c9ad26f386bc1168
+
+Add --no-mouse option to replace FZF_MOUSE_ENABLED
+(found via Stack Overflow: https://stackoverflow.com/questions/7124914/how-to-search-a-git-repository-by-commit-message)
+Task 8
+----
+
+Task completed using information found in the following link:
+
+https://stackoverflow.com/questions/8048584/see-changes-to-a-specific-file-using-git/31306082
+
+Task 9
+----
+
+If what I did was correct, and hopefully it is because the removal of mistake.txt is found in the changelog, I literally just used rm to remove it.
+
+Task 10
+----
+
+I completed this task using information I found at the following link:
+
+https://git-scm.com/docs/git-revert
