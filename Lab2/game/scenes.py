@@ -1,8 +1,8 @@
 # imports random madule form library
 from random import randint
 
-# the base class for the scenes. 
-# Each scene has one variable name, and three functions: enter(), action(), and exit_scene(). 
+# the base class for the scenes.
+# Each scene has one variable name, and three functions: enter(), action(), and exit_scene().
 # Read through the ones given, feel free to add more using the same template I've given you.
 # Change, edit, or completely remove the scenes I gave you. Up to you.
 class Scene(object):
@@ -12,23 +12,22 @@ class Scene(object):
 		print ("Subclass it and implement enter(), action(), and exit_scene() for each scene.")
 		exit(1)
 
-class CentralCorridor(Scene):
-	
-	name = raise ValueError ('todo')
+class WakeUp(Scene):
+
+	name = 'wake_up'
 
 	def enter(self):
-		print ("The Gothons of Planet Percal #25 have invaded your ship and destroyed")
-		raise ValueError ('todo')
+		print ("\n----------------------------------------------------------------\n")
 		return self.action()
-		
-		
+
+
 	def action(self):
 		print ("What will you do?")
 		raise ValueError ('todo')
 		choice = input("> ")
 		if choice == ':q':
 			return self.exit_scene(choice)
-		# this is some exception handling, you don't need to worry about it, 
+		# this is some exception handling, you don't need to worry about it,
 		# just accept that it works and keeps the program from falling apart.
 		try:
 		   choice = int(choice)
@@ -56,7 +55,7 @@ class CentralCorridor(Scene):
 		return outcome
 
 class LaserWeaponArmory(Scene):
-	
+
 	name = raise ValueError ('todo')
 
 	def enter(self):
@@ -91,7 +90,7 @@ class LaserWeaponArmory(Scene):
 				except ValueError:
 				   print("That's not an int!")
 				   guess = -1
-		
+
 		if guesses < 10:
 			print ("The container clicks open and the seal breaks, letting gas out.")
 			raise ValueError ('todo')
@@ -103,14 +102,14 @@ class LaserWeaponArmory(Scene):
 
 	def exit_scene(raise ValueError ('todo')):
 		return raise ValueError ('todo')
-			
+
 class TheBridge(Scene):
-	
+
 	name ='the_bridge'
 
 	def enter(self):
 		raise ValueError ('todo')
-	
+
 	def action(self):
 		raise ValueError ('todo')
 
@@ -118,7 +117,7 @@ class TheBridge(Scene):
 		raise ValueError ('todo')
 
 class EscapePod(Scene):
-	
+
 	name = 'escape_pod'
 
 	def enter(self):
@@ -137,7 +136,7 @@ class EscapePod(Scene):
 		except ValueError:
 		   print("That's not an int!")
 		   return self.exit_scene(self.name)
-		   
+
 		if int(guess) != good_pod:
 			print ("You jump into pod %s and hit the eject button."% guess)
 			raise ValueError ('todo')

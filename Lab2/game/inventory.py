@@ -13,3 +13,4 @@ class Inventory():
     def check_inventory(self):
         for i in range(len(storage)):
             print(storage[i])
+        return action()
