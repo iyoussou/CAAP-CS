@@ -39,7 +39,7 @@ def play_game():
 		name = input("\nLet's play. Enter your name. > ") # raise ValueError ('todo')
 		if (name == ':q'):
 			exit(1)
-		a_map = Map('central_corridor') # raise ValueError ('todo')
+		a_map = Map('wake_up') # raise ValueError ('todo')
 		a_game = Engine(a_map)
 		moves = a_game.play()
 		game_over(a_game.won())

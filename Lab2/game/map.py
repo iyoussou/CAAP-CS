@@ -6,10 +6,8 @@ from death import Death
 # you can probably add your own custom maps (as long as they somehow lead to end)?
 class Map(object):
 	scenes = {'wake_up' : S.WakeUp(),
-				'laser_weapon_armory' : S.LaserWeaponArmory(),
-				'the_bridge' : S.TheBridge(),
-				'escape_pod' : S.EscapePod(),
-				'death' : Death()
+				'door_one' : S.DoorOne(),
+				'door_two' : S.DoorTwo(),
 				# raise ValueError ('todo')
 				}
 

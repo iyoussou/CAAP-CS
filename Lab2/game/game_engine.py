@@ -33,7 +33,7 @@ class Engine(object):
 				checkpoint = current_scene
 				current_scene = self.scene_map.next_scene(next_scene_name)
 				n_moves += 1
-		if (raise ValueError ('todo')):
+		if (current_scene == 'finished'):
 			self.escaped = True
 		return n_moves
 

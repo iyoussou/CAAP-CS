@@ -1,16 +1,22 @@
-import scenes
+import scenes as S
 
-class Inventory():
+class Inventory(object):
 
-    storage = []
+	storage = []
 
-    def __init__(self, item):
-        self.item = item
+	def store_item(self, item):
+		self.item = item
+		self.storage.append(self.item)
 
-    def store_item(self):
-        storage.append(self.item)
+	def check_inventory(self):
+		if storage[0]:
+			print("\n----------------------------------------------------------------")
+			for i in range(len(self.storage)):
+				print(self.storage[i])
+			print("\n----------------------------------------------------------------")
 
-    def check_inventory(self):
-        for i in range(len(storage)):
-            print(storage[i])
-        return action()
+	def storage(self, item):
+		self.item = item
+		for i in range(len(self.storage)):
+			if storage[i] == self.item:
+				return True

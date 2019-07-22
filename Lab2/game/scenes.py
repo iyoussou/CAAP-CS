@@ -1,6 +1,8 @@
 # imports random madule form library
 from random import randint
+from inventory import Inventory
 
+inventory = Inventory()
 # the base class for the scenes.
 # Each scene has one variable name, and three functions: enter(), action(), and exit_scene().
 # Read through the ones given, feel free to add more using the same template I've given you.
@@ -15,16 +17,17 @@ class Scene(object):
 class WakeUp(Scene):
 
 	name = 'wake_up'
+	already_taken = False
 
 	def enter(self):
 		print ("\n----------------------------------------------------------------\n")
+		print("You wake up in a cave. You don't remember the last time you've seen sunlight. In front of you are two doors. To the left, there is a bright light.\n")
 		return self.action()
 
 
 	def action(self):
 		print ("What will you do?")
-		raise ValueError ('todo')
-		choice = input("> ")
+		choice = input("\n 1) Check Room\n 2) Enter Door One\n 3) Enter Door Two\n 4) Check Inventory\n > ")
 		if choice == ':q':
 			return self.exit_scene(choice)
 		# this is some exception handling, you don't need to worry about it,
@@ -36,17 +39,34 @@ class WakeUp(Scene):
 		   return self.exit_scene(self.name)
 
 		if int(choice) == 1:
-			print ("Quick on the draw you yank out your blaster and fire it at the Gothon.")
-			raise ValueError ('todo')
-			return self.exit_scene('death') # raise ValueError ('todo')
+			if self.already_taken == False:
+				
+				x = input("\n---------------------------------------------------------------- \n You look around the room. Upon further examination, the source of light is revealed to be a torch. \n---------------------------------------------------------------- \n 1) Take the torch\n 2) Walk away\n > ")
+
+				if int(x) == 1:
+					inventory.store_item('torch')
+					print("\n----------------------------------------------------------------\nYou take the torch.\n----------------------------------------------------------------\n")
+					self.already_taken = True
+					return self.action()
+				else:
+					print("\n----------------------------------------------------------------\nYou walk away.\n----------------------------------------------------------------\n")
+					return self.action()
+			
+			else:
+				print("\n----------------------------------------------------------------\n You look around the room. \n----------------------------------------------------------------")
+			return self.action() # raise ValueError ('todo')
 		elif int(choice) == 2:
-			print ("Like a world class boxer you dodge, weave, slip and slide right")
-			raise ValueError ('todo')
-			return self.exit_scene('death') # raise ValueError ('todo')
+			print ("\n----------------------------------------------------------------\nYou walk through Door One. \n----------------------------------------------------------------")
+			return self.exit_scene('door_one') # raise ValueError ('todo')
 		elif int(choice) == 3:
-			print ("Lucky for you they made you learn Gothon insults in the academy.")
-			raise ValueError ('todo')
-			return self.exit_scene('laser_weapon_armory') # raise ValueError ('todo')
+			print ("\n----------------------------------------------------------------\nYou walk through Door Two. ")
+			return self.exit_scene('door_two') # raise ValueError ('todo')
+		elif int(choice) == 4:
+			print ("\n----------------------------------------------------------------\n")
+			print("Inventory:\n")
+			inventory.check_inventory()
+			print ("\n----------------------------------------------------------------")
+			return self.action() # raise ValueError ('todo')
 		else:
 			print ("DOES NOT COMPUTE! Choose an option or type :q to end game") # raise ValueError ('todo')
 			return self.exit_scene(self.name)
@@ -54,97 +74,21 @@ class WakeUp(Scene):
 	def exit_scene(self, outcome):
 		return outcome
 
-class LaserWeaponArmory(Scene):
 
-	name = raise ValueError ('todo')
+class DoorOne(Scene):
+
+	name = 'door_one'
 
 	def enter(self):
-		print ("You do a dive roll into the Weapon Armory, crouch and scan the room")
-		raise ValueError ('todo')
-		return raise ValueError ('todo')
-
-	def action(self):
-		print ("There's a keypad lock on the box")
-		raise ValueError ('todo')
-		code = [randint(0,9), randint(0,9), randint(0,9)]
-		guesses = 0
-		# loop to check three random integers, one at a time
-		for i in range(3):
-			print ("Enter digit %d." % (i+1))
-			guess = input("[keypad]> ")
-			if guess == ':q':
-				return self.exit_scene(guess)
-			try:
-			   guess = int(guess)
-			except ValueError:
-			   print("That's not an int!")
-			   return self.exit_scene(self.name)
-			while int(guess) != code[i] and guesses <10:
-				print ("BZZZZEDDD!")
-				guesses += 1
-				guess =input("[keypad]> ")
-				if guess == ':q':
-					return self.exit_scene(guess)
-				try:
-				   guess = int(guess)
-				except ValueError:
-				   print("That's not an int!")
-				   guess = -1
-
-		if guesses < 10:
-			print ("The container clicks open and the seal breaks, letting gas out.")
-			raise ValueError ('todo')
-			return self.exit_scene('the_bridge')
+		if inventory.storage('torch') == True:
+			return self.action()
 		else:
-			print ("The lock buzzes one last time and then you hear a sickening")
-			raise ValueError ('todo')
-			return self.exit_scene('death') # raise ValueError ('todo')
-
-	def exit_scene(raise ValueError ('todo')):
-		return raise ValueError ('todo')
-
-class TheBridge(Scene):
-
-	name ='the_bridge'
-
-	def enter(self):
-		raise ValueError ('todo')
-
-	def action(self):
-		raise ValueError ('todo')
+			print("The door closes behind you. It's pitch black. You feel along the wall looking for a soure of light until you bump into something. It grabs and bites your leg.\n You struggle to free yourself, but since you can't see anything, it's pointless.")
+			return self.exit_scene('died')
 
 	def exit_scene(self, outcome):
-		raise ValueError ('todo')
+		return outcome
 
-class EscapePod(Scene):
+class DoorTwo(Scene):
 
-	name = 'escape_pod'
-
-	def enter(self):
-		raise ValueError ('todo')
-
-
-	def action(self):
-		print ("There's 5 pods, which one do you take?")
-		good_pod = randint(1,5)
-		guess = input("[pod #]> ")
-
-		if guess == ':q':
-			return self.exit_scene(guess)
-		try:
-		   guess = int(guess)
-		except ValueError:
-		   print("That's not an int!")
-		   return self.exit_scene(self.name)
-
-		if int(guess) != good_pod:
-			print ("You jump into pod %s and hit the eject button."% guess)
-			raise ValueError ('todo')
-			return self.exit_scene('death')
-		else:
-			print ("You jump into pod %s and hit the eject button."% guess)
-			raise ValueError ('todo')
-			return self.exit_scene('finished')
-
-	def exit_scene(self, outcome):
-		raise ValueError ('todo')
+	name = 'door_two'
