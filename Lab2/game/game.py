@@ -21,9 +21,9 @@ def game_over(won):
 	score = Score(name, moves)
 	if won == True:
 		print("You won!")
-		# leaderboard.update(score)
+		leaderboard.update(score)
 	print ("\nGame Over.")
-	# leaderboard.print_board()
+	leaderboard.print_board()
 	moves = 0
 	name = ""
 

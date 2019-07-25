@@ -15,25 +15,30 @@ class Engine(object):
 	def play(self):
 		current_scene = self.scene_map.opening_scene()
 		next_scene_name = ''
-		checkpoint = ''
+		checkpoint = self.scene_map.opening_scene()
 		n_moves = 0
 		while (next_scene_name != 'finished' and self.lives > 0):
-			print ("\n*******************************************************************") #raise ValueError ('todo')
 			next_scene_name = current_scene.enter()
 			if (next_scene_name == ':q'):
 				exit(1)
 			elif (next_scene_name == 'death'):
-				checkpoint = current_scene
 				n_moves += 1
 				current_scene = self.scene_map.next_scene(next_scene_name)
 			elif (next_scene_name == 'died'):
 				self.lives -= 1
+				if self.lives == 1:
+					print("\nYou have %s life left!" %(self.lives))
+					print("\n----------------------------------------------------------------")
+				else:
+					print("\nYou have %s lives left!" %(self.lives))
+					print("\n----------------------------------------------------------------")
 				current_scene = checkpoint
 			else:
-				checkpoint = current_scene
 				current_scene = self.scene_map.next_scene(next_scene_name)
 				n_moves += 1
-		if (current_scene == 'finished'):
+				if next_scene_name == 'bridge_door_one' or next_scene_name == 'bridge_door_two':
+					checkpoint = current_scene
+		if (next_scene_name == 'finished'):
 			self.escaped = True
 		return n_moves
 

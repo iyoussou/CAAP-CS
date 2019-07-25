@@ -9,7 +9,7 @@ class Leaderboard(object):
 	def __init__(self):
 		for i in range(self.size):
 			name = "Bob" + str(i + 1)
-			score = 0
+			score = 99
 			score = Score(name, score)
 			self.board.append(score)
 
@@ -21,11 +21,14 @@ class Leaderboard(object):
 
 	# checks if given score should be in the leaderboard
 	def update(self, score):
-		raise ValueError ('todo')
+		for i in range(len(self.board)):
+			if score.get_score() <= self.board[i].get_score():
+				self.insert(score, i) 
+				break
 
 	# inserts the score in the given position (assuming it's better or equal to the one in the given rank)
 	# moving everything below down a rank
 	def insert(self, score, i):
-		raise ValueError ('todo')
+		self.board.insert(i, score)
 
 leaderboard = Leaderboard()

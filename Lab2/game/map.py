@@ -8,6 +8,12 @@ class Map(object):
 	scenes = {'wake_up' : S.WakeUp(),
 				'door_one' : S.DoorOne(),
 				'door_two' : S.DoorTwo(),
+				'bridge_door_one' : S.BridgeDoorOne(),
+				'cyclops_room' : S.CyclopsRoom(),
+				'collapsing_tunnel' : S.CollapsingTunnel(),
+				'cliff' : S.Cliff(),
+				'bridge_door_two' : S.BridgeDoorTwo(),
+				'death' : Death(),
 				# raise ValueError ('todo')
 				}
 

@@ -13,4 +13,4 @@ class Score(object):
 
 	# returns score of player
 	def get_score(self):
-		return self.score
+		return int(self.score)
