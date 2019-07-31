@@ -4,11 +4,12 @@ class Engine(object):
 
 	# global variables to keep track of game status and live count
 	escaped = False
-	lives = 3
+	lives = 0
 
 	# initializes the map in the game
-	def __init__(self, scene_map):
+	def __init__(self, scene_map, lives):
 		self.scene_map = scene_map
+		self.lives = int(lives)
 
 	# takes current scene, plays it, gets the next scene, and updates the game
 	# should also return the number of moves the game takes in total

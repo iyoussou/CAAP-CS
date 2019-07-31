@@ -7,7 +7,9 @@ inventory = Inventory()
 # Each scene has one variable name, and three functions: enter(), action(), and exit_scene().
 # Read through the ones given, feel free to add more using the same template I've given you.
 # Change, edit, or completely remove the scenes I gave you. Up to you.
-
+class Scene(object):
+	print("Initializing...")
+	
 class WakeUp(Scene):
 
 	name = 'wake_up'

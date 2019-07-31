@@ -1,10 +1,6 @@
 ('C:\\Users\\CCSS '
  'Student\\Documents\\CAAP-CS\\Lab2\\game\\build\\mygame\\PYZ-00.pyz',
- [('_py_abc',
-   'c:\\users\\ccss '
-   'student\\appdata\\local\\programs\\python\\python37\\lib\\_py_abc.py',
-   'PYMODULE'),
-  ('ntpath',
+ [('ntpath',
    'c:\\users\\ccss '
    'student\\appdata\\local\\programs\\python\\python37\\lib\\ntpath.py',
    'PYMODULE'),
@@ -16,13 +12,17 @@
    'c:\\users\\ccss '
    'student\\appdata\\local\\programs\\python\\python37\\lib\\datetime.py',
    'PYMODULE'),
-  ('stringprep',
+  ('_py_abc',
    'c:\\users\\ccss '
-   'student\\appdata\\local\\programs\\python\\python37\\lib\\stringprep.py',
+   'student\\appdata\\local\\programs\\python\\python37\\lib\\_py_abc.py',
    'PYMODULE'),
   ('tracemalloc',
    'c:\\users\\ccss '
    'student\\appdata\\local\\programs\\python\\python37\\lib\\tracemalloc.py',
+   'PYMODULE'),
+  ('stringprep',
+   'c:\\users\\ccss '
+   'student\\appdata\\local\\programs\\python\\python37\\lib\\stringprep.py',
    'PYMODULE'),
   ('typing',
    'c:\\users\\ccss '

@@ -36,13 +36,13 @@
   ('game',
    'C:\\Users\\CCSS Student\\Documents\\CAAP-CS\\Lab2\\game\\game.py',
    'PYSOURCE'),
-  ('VCRUNTIME140.dll',
-   'c:\\users\\ccss '
-   'student\\appdata\\local\\programs\\python\\python37\\VCRUNTIME140.dll',
-   'BINARY'),
   ('python37.dll',
    'c:\\users\\ccss '
    'student\\appdata\\local\\programs\\python\\python37\\python37.dll',
+   'BINARY'),
+  ('VCRUNTIME140.dll',
+   'c:\\users\\ccss '
+   'student\\appdata\\local\\programs\\python\\python37\\VCRUNTIME140.dll',
    'BINARY'),
   ('_ssl',
    'c:\\users\\ccss '
@@ -76,13 +76,13 @@
    'c:\\users\\ccss '
    'student\\appdata\\local\\programs\\python\\python37\\DLLs\\_socket.pyd',
    'EXTENSION'),
-  ('libssl-1_1.dll',
-   'c:\\users\\ccss '
-   'student\\appdata\\local\\programs\\python\\python37\\DLLs\\libssl-1_1.dll',
-   'BINARY'),
   ('libcrypto-1_1.dll',
    'c:\\users\\ccss '
    'student\\appdata\\local\\programs\\python\\python37\\DLLs\\libcrypto-1_1.dll',
+   'BINARY'),
+  ('libssl-1_1.dll',
+   'c:\\users\\ccss '
+   'student\\appdata\\local\\programs\\python\\python37\\DLLs\\libssl-1_1.dll',
    'BINARY'),
   ('base_library.zip',
    'C:\\Users\\CCSS '
@@ -96,7 +96,7 @@
  [],
  False,
  False,
- 1564022972,
+ 1564064034,
  [('run.exe',
    'c:\\users\\ccss '
    'student\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyInstaller\\bootloader\\Windows-64bit\\run.exe',

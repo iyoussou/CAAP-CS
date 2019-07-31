@@ -36,11 +36,15 @@ def play_game():
 		global name
 		global moves
 		print ("Welcome to my game! To quit enter :q at any time. You will have three lives. Good luck!") # raise ValueError ('todo')
+		lives = input("\nPlease select a difficulty\n\n1) Hard\n2) Medium\n3) Easy\n > ")
+		if int(lives) > 3:
+			print("\nOkay, it's clear you meant to select easy. Please read the directions.")
+			lives = 3
 		name = input("\nLet's play. Enter your name. > ") # raise ValueError ('todo')
 		if (name == ':q'):
 			exit(1)
 		a_map = Map('wake_up') # raise ValueError ('todo')
-		a_game = Engine(a_map)
+		a_game = Engine(a_map, lives)
 		moves = a_game.play()
 		game_over(a_game.won())
 
