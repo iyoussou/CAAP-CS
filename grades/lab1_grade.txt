@@ -31,4 +31,7 @@ Code style
 
 Bonus:                                                                        _/0
 
-Total                                                                         _/100
+Total                                                                         0/100
+
+Comments:
+  -Missing files
